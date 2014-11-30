@@ -70,7 +70,7 @@ public class Field :MonoBehaviour {
 	 
 
 	public virtual void tryFill(){
-		if (fieldAbove.isFilling)
+		if (fieldAbove.isFilling||fieldAbove.Empty)
 						return;
 		currentCrop=FieldAbove.currentCrop;
 		fieldAbove.currentCrop = null;
@@ -81,12 +81,15 @@ public class Field :MonoBehaviour {
 	}
 
 	private void moveCropToThisField(){
-		Vector3 diff = currentCrop.transform.position - transform.position;
-		if (diff.sqrMagnitude > 1)
-						currentCrop.transform.position -= speed*diff;
-				else
-						IsFilling = false;
-
+		if (currentCrop == null)
+						Debug.Log ("xxx");
+				else {
+						Vector3 diff = currentCrop.transform.position - transform.position;
+						if (diff.sqrMagnitude > 0.01)
+								currentCrop.transform.position -= speed * diff;
+						else
+								IsFilling = false;
+				}
 	}
 
 

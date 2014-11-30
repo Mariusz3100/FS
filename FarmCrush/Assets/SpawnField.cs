@@ -9,6 +9,7 @@ public class SpawnField : Field
 		if (!IsFilling) {
 			IsFilling = true;
 			this.CurrentCrop = CropTypeData.Instance.getRandomNewCrop ();
+			Empty=false;
 		}
 		
 	}	

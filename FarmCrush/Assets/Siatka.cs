@@ -24,8 +24,10 @@ public class Siatka : MonoBehaviour {
 		fields=new Field[(int)(playgroundSize.y)][];
 
 		fields [0] = new Field[(int)(playgroundSize.x)];
-		for (int i=0; i<playgroundSize.x; i++)
-						fields [0] [i] = new SpawnField ();
+		for (int i=0; i<playgroundSize.x; i++) {
+			fields [0] [i] = rows[0].fields[i];
+
+		}
 
 		for (int j=1; j<playgroundSize.y; j++) {
 			fields [j]=new Field[(int)(playgroundSize.x)];
