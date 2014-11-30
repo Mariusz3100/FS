@@ -5,7 +5,7 @@ public class CropTypeData : MonoBehaviour
 {
 	int cropTypes=0;
 	public string[] namesList;
-	public GameObject[] objectList;
+	public Crop[] CropList;
 
 	private static CropTypeData instance;
 
@@ -22,8 +22,16 @@ public class CropTypeData : MonoBehaviour
 			throw new UnityException("More than one instance of CropTypeData");
 		instance = this;
 
-		if(objectList.Length!=namesList.Length)
+		if(CropList.Length!=namesList.Length)
 			throw new UnityException("Inconsistent number of crop names/objects");
+		cropTypes=CropList.Length;
+
+		for (int i=0; i<this.CropList.Length; i++) 
+		{
+			this.CropList[i].Name=namesList[i];
+			this.CropList[i].Type=i;
+
+		}
 	}
 	
 	// Update is called once per frame

@@ -1,11 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class FieldRow : MonoBehaviour
+public class Nettle : Crop
 {
-	public Field[] fields;
-	int[] x;
-	int t;
+
 		// Use this for initialization
 		void Start ()
 		{
