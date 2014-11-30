@@ -30,7 +30,7 @@ public class Siatka : MonoBehaviour {
 		for (int j=1; j<playgroundSize.y; j++) {
 			fields [j]=new Field[(int)(playgroundSize.x)];
 			for (int i=0; i<playgroundSize.x; i++){
-				fields [j] [i] = rows[j].;
+				fields [j] [i] = rows[j].fields[i];
 				fields [j] [i].FieldAbove=fields [j-1] [i];
 			}
 		}

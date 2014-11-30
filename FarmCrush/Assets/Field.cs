@@ -2,9 +2,11 @@
 using System.Collections;
 
 public class Field :MonoBehaviour {
+	public static float speed=0.01f;
 
 	private Crop currentCrop;
-	
+
+
 	public Crop CurrentCrop {
 		get {
 			return currentCrop;
@@ -47,7 +49,6 @@ public class Field :MonoBehaviour {
 		}
 	}
 
-	public static float speed;
 
 	// Use this for initialization
 	void Start () {
@@ -58,7 +59,7 @@ public class Field :MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Empty) {
-			fill ();
+			tryFill ();
 		} else {
 			moveCropToThisField();
 		
@@ -68,14 +69,23 @@ public class Field :MonoBehaviour {
 
 	 
 
-	public void fill(){
+	public virtual void tryFill(){
+		if (fieldAbove.isFilling)
+						return;
 		currentCrop=FieldAbove.currentCrop;
 		fieldAbove.currentCrop = null;
 		fieldAbove.Empty = true;
+		isFilling = true;
+		Empty = false;
 
 	}
 
 	private void moveCropToThisField(){
+		Vector3 diff = currentCrop.transform.position - transform.position;
+		if (diff.sqrMagnitude > 1)
+						currentCrop.transform.position -= speed*diff;
+				else
+						IsFilling = false;
 
 	}
 

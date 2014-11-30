@@ -47,11 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Crop\Crop.cs" />
+     <Compile Include="Assets\Crop\CropTypeData.cs" />
      <Compile Include="Assets\Crop\Hay.cs" />
      <Compile Include="Assets\Crop\Nettle.cs" />
      <Compile Include="Assets\Crop\Potatoes.cs" />
      <Compile Include="Assets\Crop\Wheat.cs" />
-     <Compile Include="Assets\CropTypeData.cs" />
      <Compile Include="Assets\Field.cs" />
      <Compile Include="Assets\FieldRow.cs" />
      <Compile Include="Assets\Siatka.cs" />

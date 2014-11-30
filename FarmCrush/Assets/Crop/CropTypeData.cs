@@ -34,9 +34,15 @@ public class CropTypeData : MonoBehaviour
 		}
 	}
 	
-	// Update is called once per frame
-	void Update ()
+	public Crop getRandomNewCrop()
 	{
+		int randInt=(int)(Random.Range (0, CropList.Length));
+		if(randInt==CropList.Length)
+			randInt=(int)(Random.Range (0, CropList.Length));
+
+		Crop newCrop= (Crop)Instantiate(CropList[randInt], this.transform.position,Quaternion.identity);
+		return newCrop;
+
 	}
 
 

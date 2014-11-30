@@ -4,14 +4,15 @@ using System.Collections;
 public class SpawnField : Field
 {
 
-		void Start ()
-		{
-	
+	public override void tryFill(){
+
+		if (!IsFilling) {
+			IsFilling = true;
+			this.CurrentCrop = CropTypeData.Instance.getRandomNewCrop ();
 		}
-	
-		void Update ()
-		{
-	
-		}
+		
+	}	
+
+		
 }
 
