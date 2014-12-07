@@ -2,24 +2,19 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Field.cs">
     <Files>
+      <File FileName="Assets\Siatka.cs" Line="40" Column="1" />
       <File FileName="Assets\Crop\Nettle.cs" Line="1" Column="1" />
       <File FileName="Assets\Crop\Crop.cs" Line="1" Column="1" />
-      <File FileName="Assets\Field.cs" Line="88" Column="34" />
+      <File FileName="Assets\Field.cs" Line="84" Column="27" />
       <File FileName="Assets\Crop\CropTypeData.cs" Line="1" Column="1" />
-      <File FileName="Assets\SpawnField.cs" Line="12" Column="16" />
-      <File FileName="Assets\Siatka.cs" Line="40" Column="1" />
+      <File FileName="Assets\SpawnField.cs" Line="9" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint enabled="false" file="C:\Users\Mariusz\Documents\GitHub\FS\FarmCrush\Assets\Crop\CropTypeData.cs" line="43" />
-      <Breakpoint file="C:\Users\Mariusz\Documents\GitHub\FS\FarmCrush\Assets\Siatka.cs" line="40" />
-      <Breakpoint file="C:\Users\Mariusz\Documents\GitHub\FS\FarmCrush\Assets\Field.cs" line="62" />
+      <Breakpoint file="C:\Users\Mariusz\Documents\GitHub\FS\FarmCrush\Assets\Field.cs" line="89" />
       <Breakpoint file="C:\Users\Mariusz\Documents\GitHub\FS\FarmCrush\Assets\Field.cs" line="64" />
-      <Breakpoint file="C:\Users\Mariusz\Documents\GitHub\FS\FarmCrush\Assets\Field.cs" line="73" />
-      <Breakpoint file="C:\Users\Mariusz\Documents\GitHub\FS\FarmCrush\Assets\Field.cs" line="75" />
-      <Breakpoint file="C:\Users\Mariusz\Documents\GitHub\FS\FarmCrush\Assets\SpawnField.cs" line="9" />
-      <Breakpoint file="C:\Users\Mariusz\Documents\GitHub\FS\FarmCrush\Assets\SpawnField.cs" line="10" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

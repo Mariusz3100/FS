@@ -56,6 +56,7 @@
      <Compile Include="Assets\FieldRow.cs" />
      <Compile Include="Assets\Siatka.cs" />
      <Compile Include="Assets\SpawnField.cs" />
+     <Compile Include="Assets\TexShift.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

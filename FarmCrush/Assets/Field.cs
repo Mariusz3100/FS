@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Field :MonoBehaviour {
-	public static float speed=0.01f;
+	public static float speed=0.03f;
 
 	private Crop currentCrop;
 
@@ -82,11 +82,11 @@ public class Field :MonoBehaviour {
 
 	private void moveCropToThisField(){
 		if (currentCrop == null)
-						Debug.Log ("xxx");
+						throw new UnityException("Crop shouldn't be null here");
 				else {
 						Vector3 diff = currentCrop.transform.position - transform.position;
-						if (diff.sqrMagnitude > 0.01)
-								currentCrop.transform.position -= speed * diff;
+						if(diff.y<0||diff.sqrMagnitude > 0.01)
+								currentCrop.transform.position -= speed * diff.normalized;
 						else
 								IsFilling = false;
 				}
