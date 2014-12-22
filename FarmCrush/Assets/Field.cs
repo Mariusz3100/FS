@@ -59,10 +59,14 @@ public class Field :MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Empty) {
+			InputHandler.InputBlocked=true;
 			tryFill ();
 		} else {
+			InputHandler.InputBlocked=true;
 			moveCropToThisField();
-		
+			if(!isFilling&&!Empty)
+				InputHandler.InputBlocked=false;
+
 		}
 
 	}
@@ -85,7 +89,7 @@ public class Field :MonoBehaviour {
 						throw new UnityException("Crop shouldn't be null here");
 				else {
 						Vector3 diff = currentCrop.transform.position - transform.position;
-						if(diff.y<0||diff.sqrMagnitude > 0.01)
+						if(diff.y<0||diff.sqrMagnitude > 0.005)
 								currentCrop.transform.position -= speed * diff.normalized;
 						else
 								IsFilling = false;

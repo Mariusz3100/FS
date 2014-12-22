@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Crop\Carrot.cs" />
      <Compile Include="Assets\Crop\Crop.cs" />
      <Compile Include="Assets\Crop\CropTypeData.cs" />
      <Compile Include="Assets\Crop\Hay.cs" />
@@ -54,6 +55,7 @@
      <Compile Include="Assets\Crop\Wheat.cs" />
      <Compile Include="Assets\Field.cs" />
      <Compile Include="Assets\FieldRow.cs" />
+     <Compile Include="Assets\InputHandler.cs" />
      <Compile Include="Assets\Siatka.cs" />
      <Compile Include="Assets\SpawnField.cs" />
      <Compile Include="Assets\TexShift.cs" />
