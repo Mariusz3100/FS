@@ -40,6 +40,7 @@ public class CropTypeData : MonoBehaviour
 		if(randInt==CropList.Length)
 			randInt=(int)(Random.Range (0, CropList.Length));
 
+
 		Crop newCrop= (Crop)Instantiate(CropList[randInt]);
 		newCrop.Type = CropList [randInt].Type;
 		return newCrop;

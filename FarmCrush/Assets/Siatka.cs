@@ -122,26 +122,56 @@ public class Siatka : MonoBehaviour {
 	}
 
 	void Update () {
+		updateFields ();
+	}
+
+
+	void updateFields()
+	{
+
+
+
+	}
+
+
+	public void executeMatches(Vector2[] matches){
+		GuiScript.getSingleton ().addPoints (
+			fields[(int)matches[0].y][(int)matches[0].x].CurrentCrop.Points*matches.Length
+			);
+
+
+		foreach (Vector2 v in matches) {
+			fields [(int)v.y] [(int)v.x].emptyThisField();
+			
+		}
 
 	}
 
 	public Vector2[] checkForMatches(){
-		Vector2[] bestmatch=null;
+		Vector2[] bestmatch=new Vector2[]{};
 
-		for (int i=1; i<fields.Length-3; i++) {
-			for (int j=0; j<fields[0].Length-3; j++) {
+		for (int i=1; i<=fields.Length-3; i++) {
+			for (int j=0; j<=fields[0].Length-1; j++) {
 
-				if(fields[i][j].CurrentCrop.Type==fields[i+1][j].CurrentCrop.Type)
+				if(fields.Length>i+1&&!fields[i][j].IsFilling&&!fields[i+1][j].IsFilling
+				   &&fields[i][j].CurrentCrop.Type==fields[i+1][j].CurrentCrop.Type
+				   &&fields[i][j].CurrentCrop.Type!=Crop.blankType)	
 					if(fields[i][j].CurrentCrop.Type==fields[i+2][j].CurrentCrop.Type){
-					if(bestmatch==null)
-						bestmatch=new Vector2[]{new Vector2(i,j),new Vector2(i+1,j),new Vector2(i+2,j)};
+						if(bestmatch.Length<3)
+							bestmatch=new Vector2[]{new Vector2(j,i),new Vector2(j,i+1),new Vector2(j,i+2)};
 
-					if(fields.Length>i+3&&fields[i][j].CurrentCrop.Type==fields[i+3][j].CurrentCrop.Type){
-						if(bestmatch.Length==3)
-						bestmatch=new Vector2[]{new Vector2(i,j),new Vector2(i+1,j),new Vector2(i+2,j),new Vector2(i+3,j)};
-					}
+						if(fields.Length>i+3&&fields[i][j].CurrentCrop.Type==fields[i+3][j].CurrentCrop.Type){
+							if(bestmatch.Length==3)
+							bestmatch=new Vector2[]{new Vector2(j,i),new Vector2(j,i+1),new Vector2(j,i+2),new Vector2(j,i+3)};
+						}
 
 				}
+
+
+
+
+
+
 
 
 				/*

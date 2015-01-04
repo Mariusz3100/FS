@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class Field :MonoBehaviour {
-	public static float speed=0.03f;
 
 	private Crop currentCrop;
 
@@ -50,23 +49,30 @@ public class Field :MonoBehaviour {
 	}
 
 
-	// Use this for initialization
 	void Start () {
 		empty = true;
 		isFilling = false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	public void Update () {
+		updateThisField ();
+		}
+
+
+	public void updateThisField () {
 		if (Empty) {
 			InputHandler.InputBlocked=true;
 			tryFill ();
 		} else {
-			InputHandler.InputBlocked=true;
-			moveCropToThisField();
-			if(!isFilling&&!Empty)
-				InputHandler.InputBlocked=false;
 
+			moveCropToThisField();
+			if(isFilling)
+				InputHandler.InputBlocked=true;
+
+		//		InputHandler.InputBlocked=false;
+			else{
+
+			}
 		}
 
 	}
@@ -84,16 +90,21 @@ public class Field :MonoBehaviour {
 
 	}
 
-	private void moveCropToThisField(){
-		if (currentCrop == null)
-						throw new UnityException("Crop shouldn't be null here");
-				else {
+	public void moveCropToThisField(){
+		if (currentCrop == null) {
+						//			throw new UnityException("Crop shouldn't be null here");
+				}else {
 						Vector3 diff = currentCrop.transform.position - transform.position;
 						if(diff.y<0||diff.sqrMagnitude > 0.005)
-								currentCrop.transform.position -= speed * diff.normalized;
+								currentCrop.transform.position -= Crop.speed * diff.normalized;
 						else
 								IsFilling = false;
 				}
+	}
+
+	public  void emptyThisField(){
+		Empty = true;
+		currentCrop.remove ();
 	}
 
 
