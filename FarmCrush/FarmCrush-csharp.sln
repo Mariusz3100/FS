@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{30A44D41-C03F-DEB7-CDF4-F376C4AB52D8}") = "FarmCrush", "Assembly-CSharp-vs.csproj", "{03FE0506-B2C8-E3D0-97C4-734F49BDF0C1}"
 EndProject
+Project("{30A44D41-C03F-DEB7-CDF4-F376C4AB52D8}") = "FarmCrush", "Assembly-CSharp-Editor-vs.csproj", "{98A3B2FA-17B5-4F6F-5F2C-83079D7EFCE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{03FE0506-B2C8-E3D0-97C4-734F49BDF0C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03FE0506-B2C8-E3D0-97C4-734F49BDF0C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03FE0506-B2C8-E3D0-97C4-734F49BDF0C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98A3B2FA-17B5-4F6F-5F2C-83079D7EFCE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98A3B2FA-17B5-4F6F-5F2C-83079D7EFCE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98A3B2FA-17B5-4F6F-5F2C-83079D7EFCE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98A3B2FA-17B5-4F6F-5F2C-83079D7EFCE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																	GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																											GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

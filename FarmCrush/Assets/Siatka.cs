@@ -148,31 +148,47 @@ public class Siatka : MonoBehaviour {
 	}
 
 	public Vector2[] checkForMatches(){
-		Vector2[] bestmatch=new Vector2[]{};
+				Vector2[] bestmatch = new Vector2[]{};
 
-		for (int i=1; i<=fields.Length-3; i++) {
-			for (int j=0; j<=fields[0].Length-1; j++) {
+				for (int i=1; i<=fields.Length-3; i++) {
+						for (int j=0; j<=fields[0].Length-1; j++) {
 
-				if(fields.Length>i+1&&!fields[i][j].IsFilling&&!fields[i+1][j].IsFilling
-				   &&fields[i][j].CurrentCrop.Type==fields[i+1][j].CurrentCrop.Type
-				   &&fields[i][j].CurrentCrop.Type!=Crop.blankType)	
-					if(fields[i][j].CurrentCrop.Type==fields[i+2][j].CurrentCrop.Type){
-						if(bestmatch.Length<3)
-							bestmatch=new Vector2[]{new Vector2(j,i),new Vector2(j,i+1),new Vector2(j,i+2)};
+								if (fields [i] [j].CurrentCrop.Type == fields [i + 1] [j].CurrentCrop.Type
+										&& fields [i] [j].CurrentCrop.Type != Crop.blankType)	
+								if (fields [i] [j].CurrentCrop.Type == fields [i + 2] [j].CurrentCrop.Type) {
+										if (bestmatch.Length < 3)
+												bestmatch = new Vector2[]{new Vector2 (j, i),new Vector2 (j, i + 1),new Vector2 (j, i + 2)};
 
-						if(fields.Length>i+3&&fields[i][j].CurrentCrop.Type==fields[i+3][j].CurrentCrop.Type){
-							if(bestmatch.Length==3)
-							bestmatch=new Vector2[]{new Vector2(j,i),new Vector2(j,i+1),new Vector2(j,i+2),new Vector2(j,i+3)};
+										if (fields.Length > i + 3 && fields [i] [j].CurrentCrop.Type == fields [i + 3] [j].CurrentCrop.Type) {
+												if (bestmatch.Length == 3)
+														bestmatch = new Vector2[] {
+																new Vector2 (j, i),
+																new Vector2 (j, i + 1),
+																new Vector2 (j, i + 2),
+																new Vector2 (j, i + 3)
+														};
+										}
+
+								}
 						}
-
 				}
 
 
-
-
-
-
-
+		for (int i=1; i<=fields.Length-1; i++) {
+			for (int j=0; j<=fields[0].Length-3; j++) {
+				
+				if(fields[i][j].CurrentCrop.Type==fields[i][j+1].CurrentCrop.Type
+				   &&fields[i][j].CurrentCrop.Type!=Crop.blankType)	
+				if(fields[i][j].CurrentCrop.Type==fields[i][j+2].CurrentCrop.Type){
+					if(bestmatch.Length<3)
+					bestmatch=new Vector2[]{new Vector2(j,i),new Vector2(j+1,i),new Vector2(j+2,i)};
+					
+					if(fields[0].Length>j+3&&fields[i][j].CurrentCrop.Type==fields[i][j+3].CurrentCrop.Type){
+						if(bestmatch.Length==3)
+						bestmatch=new Vector2[]{new Vector2(j,i),new Vector2(j+1,i),new Vector2(j+2,i),new Vector2(j+3,i)};
+					}
+					
+				}
 
 				/*
 				if(fields[i][j].CurrentCrop.Type==fields[i][j+1].CurrentCrop.Type)
