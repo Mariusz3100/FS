@@ -35,5 +35,26 @@ public class GuiScript : MonoBehaviour
 		score.text = pointsBefore.ToString();
 	}
 
+
+
+	void OnGUI() {
+		// ...
+		if (GUI.Button(loginButtonRect, "", "loginButton")) {
+			FBLogin();
+		}
+	}
+	
+	private void FBLogin() {
+		FB.Login("user_about_me, user_relationships, user_birthday, user_location", FBLoginCallback);
+	}
+	
+	private void FBLoginCallback(FBResult result) {
+		if(FB.IsLoggedIn) {
+			showLoggedIn();
+			StartCoroutine("ParseLogin");
+		} else {
+			Debug.Log ("FBLoginCallback: User canceled login");
+		}
+	}
 }
 
