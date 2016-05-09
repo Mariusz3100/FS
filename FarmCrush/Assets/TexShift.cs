@@ -14,7 +14,7 @@ public class TexShift : MonoBehaviour {
 		void Update() {
 			float scaleX = Mathf.Cos(Time.time) * 2F + 1;
 			float scaleY = Mathf.Sin(Time.time) * 2F + 1;
-			renderer.material.SetTextureScale("_MainTex", new Vector2(scaleX, scaleY));
+			GetComponent<Renderer>().material.SetTextureScale("_MainTex", new Vector2(scaleX, scaleY));
 		}
 
 }

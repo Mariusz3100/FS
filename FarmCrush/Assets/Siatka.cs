@@ -78,8 +78,8 @@ public class Siatka : MonoBehaviour {
 
 	public void initFields()
 	{
-		pieceSizeX=((BoxCollider2D)(fieldtemplate.collider2D)).bounds.size.x;
-		pieceSizeY=((BoxCollider2D)(fieldtemplate.collider2D)).bounds.size.y;
+		pieceSizeX=((BoxCollider2D)(fieldtemplate.GetComponent<Collider2D>())).bounds.size.x;
+		pieceSizeY=((BoxCollider2D)(fieldtemplate.GetComponent<Collider2D>())).bounds.size.y;
 
 		fields=new Field[(int)(playgroundSize.y)][];
 
